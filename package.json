@@ -1,0 +1,84 @@
+{
+  "name": "config-wrapper",
+  "version": "0.0.1",
+  "description": "Wrapper to process.env & config module to add safety, types, log and simplicity",
+  "authors": [
+    {
+      "name": "Algoan Dev Team",
+      "email": "dev-team@algoan.com",
+      "url": "https://algoan.io"
+    },
+    {
+      "name": "Guillaume Ongenae",
+      "email": "guillaume.ongenae@gmail.com",
+      "url": "https://g-ongenae.github.io"
+    }
+  ],
+  "keywords": [
+    "config",
+    "wrapper",
+    "process",
+    "secret"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g-ongenae/config-wrapper.git"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -p ./tsconfig.json -c ./tslint.json",
+    "pretest": "npm-check --skip-unused --production && npm run lint && npm run build",
+    "test": "nyc --reporter=html --reporter=lcov ava",
+    "posttest": "npm audit --only=prod",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "config": "^2.0.1",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.34",
+    "@types/lodash": "^4.14.115",
+    "@types/node": "^10.5.4",
+    "@yelloan/tslint": "0.0.6",
+    "ava": "^0.25.0",
+    "npm-check": "^5.7.1",
+    "nyc": "^12.0.2",
+    "sinon": "^6.1.4",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  },
+  "ava": {
+    "files": [
+      "./dist/test/*.test.js"
+    ],
+    "sources": [
+      "./test/**/*.ts"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": false,
+    "compileEnhancements": false
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 60,
+    "statements": 60,
+    "functions": 60,
+    "branches": 60
+  }
+}

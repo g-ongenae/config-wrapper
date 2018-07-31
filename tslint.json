@@ -1,0 +1,8 @@
+{
+  "extends": "@yelloan/tslint/tslint-config",
+  "rules": {
+    "no-any": false,
+    "no-empty": false,
+    "no-null-keyword": false
+  }
+}
