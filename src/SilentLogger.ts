@@ -1,12 +1,8 @@
+import { Logger } from './spec';
+
 //
 // HELPER
 //
-
-export declare interface Logger {
-  error: Function;
-  info: Function;
-  warn: Function;
-}
 
 /**
  * Small class to not log events
