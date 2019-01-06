@@ -8,13 +8,14 @@ export enum Priorities {
 }
 
 export enum Types {
-  ARRAY,
-  BOOLEAN,
-  FLOAT,
-  INTEGER,
-  JSON,
-  NULL,
-  STRING,
+  ARRAY = 'ARRAY',
+  BOOLEAN = 'BOOLEAN',
+  FLOAT = 'FLOAT',
+  INTEGER = 'INTEGER',
+  JSON = 'JSON',
+  NULL = 'NULL',
+  STRING = 'STRING',
+  DATE = 'DATE',
 }
 
 export declare interface Options {

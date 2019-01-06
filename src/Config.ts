@@ -238,6 +238,17 @@ export class Config {
         }
         break;
 
+      case Types.DATE:
+        try {
+          return new Date(unparsed);
+        } catch (err) {
+          if (opt.threat as boolean) {
+            throw new Error(`Unable to parse Date for ${opt.processName}: ${err}`);
+          }
+          this.log.error(`Unable to parse Date for ${opt.processName}: ${err}`);
+        }
+        break;
+
       default:
         error = `Unknow config types ${type}`;
         break;
