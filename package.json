@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "config": "^2.0.1",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@types/config": "0.0.34",
